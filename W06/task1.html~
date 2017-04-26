@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>W06: task1</title>
+  </head>
+  <body>
+    <script src="three.min.js"></script>
+    <script src="w06_task1.js"></script>
+    <script>
+      main();
+    </script>
+  </body>
+</html>
