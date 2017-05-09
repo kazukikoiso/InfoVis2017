@@ -111,7 +111,7 @@
 	}
       </script>
       
-      <script src="task3.js"></script>
+      <script src="w08_task3.js"></script>
       <script>
 	main();
       </script>
