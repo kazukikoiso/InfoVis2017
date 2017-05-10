@@ -17,10 +17,10 @@
       float ka = 0.3;
       float kd = 0.5;
       float ks = 0.8;
-      float m = 0.2; // roughness. [0:smooth, 1:rough]
+      float m = 0.2;
       float F0 = 0.2;
       
-      //	     float dd = dot( N, L );
+
       float dd = max( dot( N, L ), 0.0 );
       float ds = 0.0;
       if ( dd > 0.0 )
@@ -31,15 +31,15 @@
       float NV = dot( N, V );
       float VH = dot( V, H );
       
-      // Beckmann distribution
+
       float NH2 = NH * NH;
       float NH4 = NH2 * NH2;
       float D = ( 1.0 / ( 4.0 * m * m * NH4 ) ) * exp( ( NH2 - 1.0 ) / ( m * m * NH2 ) );
       
-      // Geometrical attenuation factor
+
       float G = min( 1.0, min( 2.0 * NH * NV / VH, 2.0 * NH * NL / VH ) );
       
-      // Fresnel term
+
       float n = ( 1.0 + sqrt( F0 ) ) / ( 1.0 - sqrt( F0 ) );
       float c = VH;
       float g = sqrt( n * n + c * c - 1.0 );
@@ -51,7 +51,6 @@
       float f1 = 1.0 + ( cgc0 / cgc1 ) * ( cgc0 / cgc1 );
       float F = 0.5 * f0 * f1;
       
-      // Specular component
       ds = ( F / 3.14159265 ) * ( D * G / ( NL * NV ) );
       }
       
@@ -72,7 +71,7 @@
 	vec3 N = normalize( normal_vector);
 	vec3 V = normalize(camera_position-point_position.xyz);
 
-	point_color = BlinnPhongReflection(C,L,N,V);
+	point_color = CookTorranceReflection(C,L,N,V);
 	gl_Position = projectionMatrix * point_position;
 	}
       </script>
