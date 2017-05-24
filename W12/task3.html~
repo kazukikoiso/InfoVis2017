@@ -5,7 +5,7 @@
     <body style="margin:0">
 	<script src="three.min.js"></script>
 	<script src="Lut.js"></script>
-	<script src="Trackballcontrols.js"></script>
+	<script src="TrackballControls.js"></script>
 	<script src="KVS.min.js"></script>
 	<script src="KVS2THREE.min.js"></script>
 	<script src="KVSLobsterData.js"></script>
