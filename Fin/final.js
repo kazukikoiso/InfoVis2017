@@ -151,7 +151,7 @@ function main()
 	this.alpha = 255;
 	this.colormap= 'rainbow';
     };
-    gui.add(guiControls, 'model',['lambertian','phong','blinnphong','toon']).onChange(changeLobster);	
+    gui.add(guiControls, 'model',['lambertian','phong','blinnphong','cooktorrance','toon']).onChange(changeLobster);	
     gui.add(guiControls,'alpha',0.0,5000).onChange(changeLobster);
     gui.add(guiControls,'colormap',['rainbow','red']).onChange(changeLobster);
     
@@ -163,10 +163,10 @@ function main()
 	    shaderModel=1;
 	else if(guiControls.model=='blinnphong')
 	    shaderModel=2;
-//	else if(guiControls.model=='cooktorrance')
-//	    shaderModel=3;
-	else
+	else if(guiControls.model=='cooktorrance')
 	    shaderModel=3;
+	else
+	    shaderModel=4;
 	transfer_function_texture = TransferFunctionTexture(guiControls);
 	raycaster_material = new THREE.ShaderMaterial( {
             vertexShader: document.getElementById( 'raycaster.vert' ).textContent,
