@@ -111,7 +111,7 @@ function TransferFunctionTexture(gui_controls)
 	else 
 	    color = RedWhiteColorMap( 0, 255, i );
 	
-	var alpha = i/gui_controls.alpha;
+	var alpha = (i+1)/gui_controls.alpha;
         data[ 4 * i + 0 ] = color.x;
         data[ 4 * i + 1 ] = color.y;
         data[ 4 * i + 2 ] = color.z;
@@ -152,7 +152,7 @@ function main()
 	this.colormap= 'rainbow';
     };
     gui.add(guiControls, 'model',['lambertian','phong','blinnphong','cooktorrance','toon']).onChange(changeLobster);	
-    gui.add(guiControls,'alpha',0.0,5000).onChange(changeLobster);
+    gui.add(guiControls,'AdjustmentParameters',0.0,5000).onChange(changeLobster);
     gui.add(guiControls,'colormap',['rainbow','red']).onChange(changeLobster);
     
     function changeLobster(){
