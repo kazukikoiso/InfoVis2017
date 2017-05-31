@@ -147,14 +147,14 @@ function main()
     var GUI = dat.gui.GUI;
     var gui = new GUI();
     var guiControls = new function(){
-	this.model = 'phong';
+	this.model = 'lambertian';
 	this.alpha = 255;
 	this.colormap= 'rainbow';
     };
     gui.add(guiControls, 'model',['lambertian','phong','blinnphong','cooktorrance','toon']).onChange(changeLobster);	
     gui.add(guiControls,'alpha',1.0,5000).onChange(changeLobster);
     gui.add(guiControls,'colormap',['rainbow','red']).onChange(changeLobster);
-    gui.add('*alpha=alphaadjuster').onChange(changeLobster);
+    gui.add(guiControls,'*alpha=alphaadjuster').onChange(changeLobster);
     
     function changeLobster(){
 	screen.scene.remove(raycaster_mesh);
