@@ -154,7 +154,6 @@ function main()
     gui.add(guiControls, 'model',['lambertian','phong','blinnphong','cooktorrance','toon']).onChange(changeLobster);	
     gui.add(guiControls,'alpha',1.0,5000).onChange(changeLobster);
     gui.add(guiControls,'colormap',['rainbow','red']).onChange(changeLobster);
-    gui.add(guiControls,'*alpha=alphaadjuster').onChange(changeLobster);
     
     function changeLobster(){
 	screen.scene.remove(raycaster_mesh);
