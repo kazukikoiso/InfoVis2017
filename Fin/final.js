@@ -147,7 +147,7 @@ function main()
     var GUI = dat.gui.GUI;
     var gui = new GUI();
     var guiControls = new function(){
-	this.model = 'lambertian';
+	this.model = 'phong';
 	this.alphaadjuster = 255;
 	this.colormap= 'rainbow';
     };
