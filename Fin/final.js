@@ -152,7 +152,7 @@ function main()
 	this.colormap= 'rainbow';
     };
     gui.add(guiControls, 'model',['lambertian','phong','blinnphong','cooktorrance','toon']).onChange(changeLobster);	
-    gui.add(guiControls,'alphaadjuster',0.0,5000).onChange(changeLobster);
+    gui.add(guiControls,'alpha',0.0,5000).onChange(changeLobster);
     gui.add(guiControls,'colormap',['rainbow','red']).onChange(changeLobster);
     
     function changeLobster(){
