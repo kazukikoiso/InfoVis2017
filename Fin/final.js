@@ -111,11 +111,11 @@ function TransferFunctionTexture(gui_controls)
 	else 
 	    color = RedWhiteColorMap( 0, 255, i );
 	
-	var alphaadjuster = i/gui_controls.alpha;
+	var alpha = i/gui_controls.alpha;
         data[ 4 * i + 0 ] = color.x;
         data[ 4 * i + 1 ] = color.y;
         data[ 4 * i + 2 ] = color.z;
-        data[ 4 * i + 3 ] = alphaadjuster;
+        data[ 4 * i + 3 ] = alpha;
     }
 
     var format = THREE.RGBAFormat;
@@ -147,12 +147,12 @@ function main()
     var GUI = dat.gui.GUI;
     var gui = new GUI();
     var guiControls = new function(){
-	this.model = 'phong';
-	this.alphaadjuster = 255;
+	this.model = 'lambertian';
+	this.alpha = 255;
 	this.colormap= 'rainbow';
     };
     gui.add(guiControls, 'model',['lambertian','phong','blinnphong','cooktorrance','toon']).onChange(changeLobster);	
-    gui.add(guiControls,'alphaadjuster',1.0,5000).onChange(changeLobster);
+    gui.add(guiControls,'alpha',0.0,5000).onChange(changeLobster);
     gui.add(guiControls,'colormap',['rainbow','red']).onChange(changeLobster);
     
     function changeLobster(){
