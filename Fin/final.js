@@ -111,7 +111,7 @@ function TransferFunctionTexture(gui_controls)
 	else 
 	    color = RedWhiteColorMap( 0, 255, i );
 	
-	var alpha = gui_controls.alpha;
+	var alpha = i*gui_controls.alpha;
         data[ 4 * i + 0 ] = color.x;
         data[ 4 * i + 1 ] = color.y;
         data[ 4 * i + 2 ] = color.z;
