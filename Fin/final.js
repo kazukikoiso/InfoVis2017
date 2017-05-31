@@ -111,11 +111,11 @@ function TransferFunctionTexture(gui_controls)
 	else 
 	    color = RedWhiteColorMap( 0, 255, i );
 	
-	var alpha = i/gui_controls.alpha;
+	var alphaadjuster = i/gui_controls.alpha;
         data[ 4 * i + 0 ] = color.x;
         data[ 4 * i + 1 ] = color.y;
         data[ 4 * i + 2 ] = color.z;
-        data[ 4 * i + 3 ] = alpha;
+        data[ 4 * i + 3 ] = alphaadjuster;
     }
 
     var format = THREE.RGBAFormat;
