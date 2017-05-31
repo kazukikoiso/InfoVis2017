@@ -281,8 +281,8 @@
 			   c.rgb = PhongReflection( c.rgb, L, N, V );
 			   else if(shader_model==2)
 			   c.rgb = BlinnPhongReflection( c.rgb, L, N, V );
-			   else if(shader_model==3)
-			   c.rgb = CookTorranceReflection( c.rgb, L, N, V );
+			  // else if(shader_model==3)
+			  // c.rgb = CookTorranceReflection( c.rgb, L, N, V );
 			   else
 			   c.rgb = ToonReflection( c.rgb, L, N, V );
 			   // Front-to-back composition.
